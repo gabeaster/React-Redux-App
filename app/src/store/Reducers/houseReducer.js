@@ -16,7 +16,7 @@ export const houseReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                //update state here with correct data
+                house: action.payload,
                 error: ''
             };
         case 'FETCH_HOUSE_FAILURE' :

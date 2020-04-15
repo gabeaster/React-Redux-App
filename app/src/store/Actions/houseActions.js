@@ -4,15 +4,15 @@ export const fetchHouse = () => {
     return dispatch => {
         dispatch({ type: 'FETCH_HOUSE_START' });
         axios  
-        .get('http://hp-api.herokuapp.com/api/characters/house/')
+        .get('https://www.potterapi.com/v1/sortingHat')
         .then(res => {
-            console.log('response', res);
-            dispatch({ type: 'FETCH_HOUSE_SUCCESS', payload: res.data})
+            console.log('House from sortingHat call is...', res.data);
+            dispatch({ type: 'FETCH_HOUSE_SUCCESS', payload: res.data.house })
         })
         .catch(err => {
             dispatch({
                 type: 'FETCH_HOUSE_FAILURE',
-                payload: `Error ${err.res.status}: ${err.res.data}`
+                payload: `Error ${err.response.status}: ${err.response.data}`
             });
         });
     };
