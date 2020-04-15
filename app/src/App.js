@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1> Harry Potter Houses </h1>
+        <img url='./assets/sortingHat.jpg'/>
       </header>
     </div>
   );
