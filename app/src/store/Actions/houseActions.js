@@ -7,7 +7,7 @@ export const fetchHouse = () => {
         .get('https://www.potterapi.com/v1/sortingHat')
         .then(res => {
             console.log('House from sortingHat call is...', res.data);
-            dispatch({ type: 'FETCH_HOUSE_SUCCESS', payload: res.data.house })
+            dispatch({ type: 'FETCH_HOUSE_SUCCESS', payload: res.data })
         })
         .catch(err => {
             dispatch({
